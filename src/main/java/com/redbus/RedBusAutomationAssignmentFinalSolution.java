@@ -22,13 +22,9 @@ public class RedBusAutomationAssignmentFinalSolution {
 		WebDriverWait wait = new WebDriverWait(wd,Duration.ofSeconds(30));
 
 		wd.get("https://www.redbus.in/");
-//		wd.manage().window().maximize();
 
-		//Locating the element
 		By sourceButtonLocator = By.xpath("//div[contains(@class,'srcDestWrapper') and (@role=\"button\")]");
 		WebElement sourceButton=wait.until(ExpectedConditions.visibilityOfElementLocated(sourceButtonLocator));
-//		//Finding the element
-//		WebElement sourceButton = wd.findElement(sourceButtonLocator);
 		sourceButton.click();
 		
 		By searchSuggestionSectionLocator=By.xpath("//*[contains(@class,'searchSuggestionWrapper')]");
