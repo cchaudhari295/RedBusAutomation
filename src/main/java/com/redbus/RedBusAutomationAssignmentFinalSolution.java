@@ -31,8 +31,7 @@ public class RedBusAutomationAssignmentFinalSolution {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(searchSuggestionSectionLocator));
 		selectLocation(wd, wait,"Mumbai");
 		selectLocation(wd, wait,"Pune");
-		
-		
+			
 		By searchButtonLocator=By.xpath("//button[contains(@class,'searchButtonWrapper')]");
 		WebElement searchButton=wait.until(ExpectedConditions.elementToBeClickable(searchButtonLocator));
 		searchButton.click();
@@ -52,10 +51,9 @@ public class RedBusAutomationAssignmentFinalSolution {
 		}
 		System.out.println(subtitleButton.getText());
 		
-		By rowListLocator=By.xpath("//li[contains(@class,'tupleWrapper')]");
-			
+		By rowListLocator=By.xpath("//li[contains(@class,'tupleWrapper')]");		
 		JavascriptExecutor js=(JavascriptExecutor)wd;
-
+		
 		while(true) {	
 			List<WebElement> rowList = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(rowListLocator));
 			List<WebElement> endOfList=wd.findElements(By.xpath("//span[contains(text(),'End of list')]"));
@@ -66,8 +64,8 @@ public class RedBusAutomationAssignmentFinalSolution {
 		}
 		
 		List<WebElement> rowList = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(rowListLocator));
-
 		By busesNameLocator=By.xpath(".//div[contains(@class,'travelsName')]");
+		
 		for(WebElement row:rowList) {
 		System.out.println(row.findElement(busesNameLocator).getText());
 		}
@@ -81,9 +79,7 @@ public class RedBusAutomationAssignmentFinalSolution {
 		
 		By searchCategoryLocator=By.xpath("//*[contains(@class,'searchCategory')]");
 		List<WebElement> searchList= wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(searchCategoryLocator,2));
-		
 		System.out.println(searchList.size());
-		
 		
 		WebElement locationSearchResult=searchList.get(0);
 		List<WebElement> locationList=locationSearchResult.findElements(By.xpath(".//div[contains(@class,'listHeader')]"));
@@ -96,5 +92,4 @@ public class RedBusAutomationAssignmentFinalSolution {
 			}
 		}
 	}
-
 }
